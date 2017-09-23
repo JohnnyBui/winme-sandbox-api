@@ -16,6 +16,10 @@ exports.createProduct = function (req, res) {
     req.body._id = state.products[state.products.length - 1]._id + 1;
   }
 
+  // add created date to product
+  req.body.createdAt = (new Date()).toJSON();
+  req.body.updatedAt = (new Date()).toJSON();
+
   state.products.push(req.body);
 
   return res.json({
@@ -63,8 +67,8 @@ exports.getProductsForHome = function (req, res) {
       }
     ],
     productThumbUrl: "https://static.winme.vn/images/products/47_1VYC21QB.jpg",
-    createdAt: Date.now,
-    updatedAt: Date.now
+    createdAt: (new Date()).toJSON(),
+    updatedAt: (new Date()).toJSON()
   }
 
   homeProducts.almostDrawProducts = [];
