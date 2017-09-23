@@ -48,27 +48,29 @@ exports.getProductsForHome = function (req, res) {
     price: 25190000,
     category_id: 1,
     status: 0,
-    totalTickets: Number,
-    joinedTickets: Number,
-    isHotProduct: Boolean,
-    isVoucherProduct: Boolean,
-    isEventProduct: Boolean,
-    brand_id: {type: Schema.ObjectId , ref: 'Brand' },
-    supplier_id: {type: Schema.ObjectId , ref: 'Supplier' },
-    region: Number,
-    productImages: {
-      mainImageUrl: String,
-      thumbImages: Object,
-    },
+    totalTickets: 100,
+    joinedTickets: 98,
+    isHotProduct: true,
+    isVoucherProduct: false,
+    isEventProduct: false,
+    brand_id: 1,
+    supplier_id: 1,
+    region: 10,
+    productImages: [
+      {
+        bigImageUrl: "https://static.winme.vn/images/products/47_1VYC21QB.jpg",
+        thumbUrl: "https://static.winme.vn/images/products/47_1VYC21QB.jpg"
+      }
+    ],
+    productThumbUrl: "https://static.winme.vn/images/products/47_1VYC21QB.jpg",
     createdAt: Date.now,
     updatedAt: Date.now
   }
 
-  homeProducts.almostDraw = [
-    {
+  homeProducts.almostDrawProducts = [];
+  for (var i = 0; i < 8; i++) {
+    homeProducts.almostDrawProducts.push(almostDrawProduct);
+  }
 
-    }
-  ]
-
-  return res.json(products);
+  return res.json(homeProducts);
 }
