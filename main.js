@@ -6,7 +6,7 @@ var WorkLogsController = require('./controllers/workLogs.controller');
 Sandbox.define('/', 'GET', function(req, res){
     res.type('text/html');
     res.status(200);
-    res.send('<h1>It works1!</h1>');
+    res.send('<h1>It works!</h1>');
 })
 
 /** Utility */
