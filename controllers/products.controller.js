@@ -76,5 +76,11 @@ exports.getProductsForHome = function (req, res) {
     homeProducts.almostDrawProducts.push(almostDrawProduct);
   }
 
+  homeProducts.hotProducts = _.filter(products, {
+    'isHotProduct': true
+  });
+
+  homeProducts.newProducts = products;
+
   return res.json(homeProducts);
 }
