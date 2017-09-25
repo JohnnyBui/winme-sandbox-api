@@ -45,6 +45,7 @@ exports.getProductsForHome = function (req, res) {
   var homeProducts = {};
 
   var almostDrawProduct = {
+    _id: 1,
     name: 'iPhone 7 Plus 128GB Red',
     sku: 'iphone-7-plus-128gb-red',
     shortDesc: 'iPhone 7 Plus 128GB Red',
@@ -54,6 +55,8 @@ exports.getProductsForHome = function (req, res) {
     status: 0,
     totalTickets: 100,
     joinedTickets: 98,
+    ticketPrice: 10000,
+    maxTickets: 5,
     isHotProduct: true,
     isVoucherProduct: false,
     isEventProduct: false,
