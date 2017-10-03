@@ -87,3 +87,19 @@ exports.getProductsForHome = function (req, res) {
 
   return res.json(homeProducts);
 }
+
+/** Return Product by id */
+exports.getProduct = function (req, res) {
+  // retrieve products or, if there are none init, to empty array
+  state.products = state.products || [];
+  var products = _.cloneDeep(state.products);
+
+  var _id = req.params.id;
+
+  // use lodash to find the product in the array
+  var product = _.find(products, {
+    '_id': parseInt(_id, 10)
+  });
+
+  return res.json(product);
+}

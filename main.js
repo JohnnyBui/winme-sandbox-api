@@ -17,3 +17,4 @@ Sandbox.define('/users', 'POST', UsersController.createUser);
 Sandbox.define('/products', 'POST', ProductsController.createProduct);
 Sandbox.define('/products', 'GET', ProductsController.getProducts);
 Sandbox.define('/products/home-products', 'GET', ProductsController.getProductsForHome);
+Sandbox.define('/products/:id', 'GET', ProductsController.getProduct);
